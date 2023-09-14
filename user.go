@@ -36,12 +36,13 @@ type UserProfile struct {
 // Do the token exchange with the `requestToken` obtained after the login flow,
 // and retrieve the `accessToken` required for all subsequent requests. The
 // response contains not just the `accessToken`, but metadata for the user who has authenticated.
-func (c *Client) GenerateSession() (UserSession, error) {
+func (c *Client) GenerateSession(totp string) (UserSession, error) {
 
 	// construct url values
 	params := make(map[string]interface{})
 	params["clientcode"] = c.clientCode
 	params["password"]  = c.password
+	params["totp"] = totp
 
 	var session UserSession
 	err := c.doEnvelope(http.MethodPost, URILogin, params, nil, &session)
