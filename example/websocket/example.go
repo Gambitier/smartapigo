@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	SmartApi "github.com/angel-one/smartapigo"
-	"github.com/angel-one/smartapigo/websocket"
 	"time"
+
+	SmartApi "github.com/skkarwasra02/smartapigo"
+	"github.com/skkarwasra02/smartapigo/websocket"
 )
 
 var socketClient *websocket.SocketClient

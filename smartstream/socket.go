@@ -5,15 +5,16 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"fmt"
-	"github.com/angel-one/smartapigo/model"
-	"github.com/angel-one/smartapigo/smartstream/internal/parser"
-	"github.com/gorilla/websocket"
 	"log"
 	"math"
 	"net/http"
 	"net/url"
 	"sync"
 	"time"
+
+	"github.com/gorilla/websocket"
+	"github.com/skkarwasra02/smartapigo/model"
+	"github.com/skkarwasra02/smartapigo/smartstream/internal/parser"
 )
 
 type WebSocket struct {
@@ -34,7 +35,7 @@ type WebSocket struct {
 	subroutineCancel    context.CancelFunc
 }
 
-//MessageHandler Handler interface for handling messages received over smartstream websocket
+// MessageHandler Handler interface for handling messages received over smartstream websocket
 type callbacks struct {
 	onLTP             func(ltpInfo model.LTPInfo)
 	onQuote           func(quote model.Quote)

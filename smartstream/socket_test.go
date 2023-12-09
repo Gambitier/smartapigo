@@ -1,9 +1,10 @@
 package smartstream
 
 import (
-	"github.com/angel-one/smartapigo/model"
 	"log"
 	"testing"
+
+	"github.com/skkarwasra02/smartapigo/model"
 )
 
 var client *WebSocket
