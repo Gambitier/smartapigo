@@ -50,7 +50,7 @@ func main() {
 	ABClient := SmartApi.New("Your Client Code", "Your Password", "Your api key")
 
 	// User Login and Generate User Session
-	session, err := ABClient.GenerateSession()
+	session, err := ABClient.GenerateSession("")
 
 	if err != nil {
 		fmt.Println(err.Error())

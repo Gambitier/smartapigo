@@ -18,7 +18,7 @@ func TestSmartStream(t *testing.T) {
 
 func onConnected() {
 	log.Printf("connected")
-	err := client.Subscribe(model.SNAPQUOTE, []model.TokenInfo{model.TokenInfo{ExchangeType: model.NSECM, Token: "1594"}})
+	err := client.Subscribe(model.SNAPQUOTE, []model.TokenInfo{{ExchangeType: model.NSECM, Token: "1594"}})
 	if err != nil {
 		log.Printf("error while subscribing")
 	}
