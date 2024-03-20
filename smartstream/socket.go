@@ -50,7 +50,7 @@ type callbacks struct {
 
 var (
 	// Default ticker url.
-	substreamURL = url.URL{Scheme: "ws", Host: "smartapisocket.angelone.in", Path: "/smart-stream"}
+	substreamURL = url.URL{Scheme: "wss", Host: "smartapisocket.angelone.in", Path: "/smart-stream"}
 )
 
 const (
