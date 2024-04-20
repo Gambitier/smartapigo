@@ -28,6 +28,7 @@ const (
 	URIGetPositions     string = "rest/secure/angelbroking/order/v1/getPosition"
 	URIGetTradeBook     string = "rest/secure/angelbroking/order/v1/getTradeBook"
 	URILTP              string = "rest/secure/angelbroking/order/v1/getLtpData"
+	URIMARKETDATA       string = "rest/secure/angelbroking/market/v1/quote"
 	URIRMS              string = "rest/secure/angelbroking/user/v1/getRMS"
 	URIConvertPosition  string = "rest/secure/angelbroking/order/v1/convertPosition"
 	URIHitorical        string = "rest/secure/angelbroking/historical/v1/getCandleData"
@@ -45,6 +46,10 @@ func structToMap(obj interface{}, tagName string) map[string]interface{} {
 			values = reflect.ValueOf(&con).Elem()
 		}
 	case LTPParams:
+		{
+			values = reflect.ValueOf(&con).Elem()
+		}
+	case MarketDataRequest:
 		{
 			values = reflect.ValueOf(&con).Elem()
 		}
