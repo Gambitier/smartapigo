@@ -120,8 +120,8 @@ type Position struct {
 	Precision             string `json:"precision"`
 	Multiplier            string `json:"multiplier"`
 	BoardLotSize          string `json:"boardlotsize"`
-	BuyQuantity           string `json:"buyquantity"`
-	SellQuantity          string `json:"sellquantity"`
+	BuyQuantity           string `json:"buyqty"`
+	SellQuantity          string `json:"sellqty"`
 	BuyAmount             string `json:"buyamount"`
 	SellAmount            string `json:"sellamount"`
 	SymbolGroup           string `json:"symbolgroup"`
