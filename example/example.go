@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	SmartApi "github.com/skkarwasra02/smartapigo"
+	SmartApi "github.com/Gambitier/smartapigo"
 )
 
 func main() {

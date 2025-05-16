@@ -4,7 +4,7 @@ import (
 	"log"
 	"testing"
 
-	"github.com/skkarwasra02/smartapigo/model"
+	"github.com/Gambitier/smartapigo/model"
 )
 
 var client *WebSocket

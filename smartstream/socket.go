@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Gambitier/smartapigo/model"
+	"github.com/Gambitier/smartapigo/smartstream/internal/parser"
 	"github.com/gorilla/websocket"
-	"github.com/skkarwasra02/smartapigo/model"
-	"github.com/skkarwasra02/smartapigo/smartstream/internal/parser"
 )
 
 type WebSocket struct {
