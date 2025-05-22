@@ -1,8 +1,8 @@
-module github.com/angel-one/smartapigo
+module github.com/Gambitier/smartapigo
 
-go 1.14
+go 1.23.3
 
 require (
-	github.com/gorilla/websocket v1.4.2
-	github.com/jarcoal/httpmock v1.0.6
+	github.com/gorilla/websocket v1.5.0
+	github.com/jarcoal/httpmock v1.2.0
 )

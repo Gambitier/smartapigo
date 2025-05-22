@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	SmartApi "github.com/angel-one/smartapigo"
+
+	SmartApi "github.com/Gambitier/smartapigo"
 )
 
 func main() {
@@ -13,7 +14,7 @@ func main() {
 	fmt.Println("Client :- ", ABClient)
 
 	// User Login and Generate User Session
-	session, err := ABClient.GenerateSession("your totp here")
+	session, err := ABClient.GenerateSession("")
 
 	if err != nil {
 		fmt.Println(err.Error())
@@ -122,7 +123,7 @@ func main() {
 	fmt.Println("Risk Managemanet System :- ", rms)
 
 	//Position Conversion
-	err = ABClient.ConvertPosition(SmartApi.ConvertPositionParams{"NSE", "SBIN-EQ", "INTRADAY", "MARGIN", "BUY", 1, "DAY"})
+	err = ABClient.ConvertPosition(SmartApi.ConvertPositionParams{Exchange: "NSE", TradingSymbol: "SBIN-EQ", OldProductType: "INTRADAY", NewProductType: "MARGIN", TransactionType: "BUY", Quantity: 1, Type: "DAY"})
 	if err != nil {
 		fmt.Println(err.Error())
 		return

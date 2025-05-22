@@ -4,18 +4,23 @@
   "errorcode": "",
   "data": [
     {
-      "tradingSymbol": "RELIANCE-EQ",
-      "exchange": "NSE",
-      "isin": "INE002A01018",
-      "t1quantity": "0",
-      "realisedquantity": "0",
-      "quantity": "0",
-      "authorisedquantity": "0",
-      "profitandloss": "0",
-      "product": "MIS",
-      "collateralquantity": "0",
-      "collateraltype": null,
-      "haircut": "0"
+        "tradingsymbol":"DELTACORP-EQ",
+        "exchange":"NSE",
+        "isin":"INE124G01033",
+        "t1quantity":0,
+        "realisedquantity":0,
+        "quantity":100,
+        "authorisedquantity":0,
+        "product":"DELIVERY",
+        "collateralquantity":null,
+        "collateraltype":null,
+        "haircut":0.0,
+        "averageprice":251.3,
+        "ltp":122.16,
+        "symboltoken":"15044",
+        "close":122.92,
+        "profitandloss":-12914.0,
+        "pnlpercentage":-51.39
     }
   ]
 }

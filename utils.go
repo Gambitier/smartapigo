@@ -28,32 +28,42 @@ const (
 	URIGetPositions     string = "rest/secure/angelbroking/order/v1/getPosition"
 	URIGetTradeBook     string = "rest/secure/angelbroking/order/v1/getTradeBook"
 	URILTP              string = "rest/secure/angelbroking/order/v1/getLtpData"
+	URIMARKETDATA       string = "rest/secure/angelbroking/market/v1/quote"
+	URIOPTIONGREEKS     string = "rest/secure/angelbroking/marketData/v1/optionGreek"
 	URIRMS              string = "rest/secure/angelbroking/user/v1/getRMS"
 	URIConvertPosition  string = "rest/secure/angelbroking/order/v1/convertPosition"
+	URIHitorical        string = "rest/secure/angelbroking/historical/v1/getCandleData"
 )
 
 func structToMap(obj interface{}, tagName string) map[string]interface{} {
 	var values reflect.Value
-	switch obj.(type) {
+	switch con := obj.(type) {
 	case OrderParams:
 		{
-			con := obj.(OrderParams)
 			values = reflect.ValueOf(&con).Elem()
 		}
-
 	case ModifyOrderParams:
 		{
-			con := obj.(ModifyOrderParams)
 			values = reflect.ValueOf(&con).Elem()
 		}
 	case LTPParams:
 		{
-			con := obj.(LTPParams)
+			values = reflect.ValueOf(&con).Elem()
+		}
+	case MarketDataRequest:
+		{
+			values = reflect.ValueOf(&con).Elem()
+		}
+	case OptionGreeksRequest:
+		{
 			values = reflect.ValueOf(&con).Elem()
 		}
 	case ConvertPositionParams:
 		{
-			con := obj.(ConvertPositionParams)
+			values = reflect.ValueOf(&con).Elem()
+		}
+	case HistoricalDataRequest:
+		{
 			values = reflect.ValueOf(&con).Elem()
 		}
 	}
@@ -68,7 +78,6 @@ func structToMap(obj interface{}, tagName string) map[string]interface{} {
 }
 
 func getIpAndMac() (string, string, string, error) {
-
 	//----------------------
 	// Get the local machine IP address
 	//----------------------
@@ -76,7 +85,6 @@ func getIpAndMac() (string, string, string, error) {
 	var localIp, currentNetworkHardwareName string
 
 	localIp, err := getLocalIP()
-
 	if err != nil {
 		return "", "", "", err
 	}
@@ -85,10 +93,8 @@ func getIpAndMac() (string, string, string, error) {
 
 	interfaces, _ := net.Interfaces()
 	for _, interf := range interfaces {
-
 		if addrs, err := interf.Addrs(); err == nil {
 			for _, addr := range addrs {
-
 				// only interested in the name with current IP address
 				if strings.Contains(addr.String(), localIp) {
 					currentNetworkHardwareName = interf.Name
@@ -100,7 +106,6 @@ func getIpAndMac() (string, string, string, error) {
 	// extract the hardware information base on the interface name
 	// capture above
 	netInterface, err := net.InterfaceByName(currentNetworkHardwareName)
-
 	if err != nil {
 		return "", "", "", err
 	}
@@ -109,7 +114,6 @@ func getIpAndMac() (string, string, string, error) {
 
 	// verify if the MAC address can be parsed properly
 	_, err = net.ParseMAC(macAddress.String())
-
 	if err != nil {
 		return "", "", "", err
 	}
@@ -120,7 +124,6 @@ func getIpAndMac() (string, string, string, error) {
 	}
 
 	return localIp, publicIp, macAddress.String(), nil
-
 }
 
 func getLocalIP() (string, error) {
