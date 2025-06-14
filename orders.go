@@ -76,8 +76,9 @@ type ModifyOrderParams struct {
 
 // OrderResponse represents the order place success response.
 type OrderResponse struct {
-	Script  string `json:"script"`
-	OrderID string `json:"orderid"`
+	Script        string `json:"script"`
+	OrderID       string `json:"orderid"`
+	UniqueOrderID string `json:"uniqueorderid"`
 }
 
 // Trade represents an individual trade response.
