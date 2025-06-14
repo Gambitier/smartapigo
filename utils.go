@@ -2,6 +2,7 @@ package smartapigo
 
 import (
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"net"
 	"net/http"
@@ -34,6 +35,10 @@ const (
 	URIConvertPosition  string = "rest/secure/angelbroking/order/v1/convertPosition"
 	URIHitorical        string = "rest/secure/angelbroking/historical/v1/getCandleData"
 )
+
+func URIGetOrderDetails(uniqueOrderID string) string {
+	return fmt.Sprintf("rest/secure/angelbroking/order/v1/details/%s", uniqueOrderID)
+}
 
 func structToMap(obj interface{}, tagName string) map[string]interface{} {
 	var values reflect.Value

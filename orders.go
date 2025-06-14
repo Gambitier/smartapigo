@@ -238,3 +238,9 @@ func (c *Client) ConvertPosition(convertPositionParams ConvertPositionParams) er
 	err = c.doEnvelope(http.MethodPost, URIConvertPosition, params, nil, nil, true)
 	return err
 }
+
+func (c *Client) GetOrderDetails(uniqueOrderID string) (Order, error) {
+	var order Order
+	err := c.doEnvelope(http.MethodGet, URIGetOrderDetails(uniqueOrderID), nil, nil, &order, true)
+	return order, err
+}
